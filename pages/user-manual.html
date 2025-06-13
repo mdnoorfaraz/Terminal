@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terminal App – User Manual</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 min-h-screen font-mono"
+  >
+    <!-- Navbar -->
+    <nav
+      class="flex justify-between items-center px-6 py-4 bg-gray-100 dark:bg-gray-800 shadow-md"
+    >
+      <div class="text-2xl font-bold">⚙️ Terminal Web App</div>
+      <div class="space-x-4">
+        <button
+          onclick="toggleDarkMode()"
+          class="bg-gray-300 dark:bg-gray-700 px-2 py-1 rounded"
+        >
+          Toggle Theme
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="px-6 py-10 max-w-4xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">📘 User Manual</h1>
+      <p class="mb-4">
+        Welcome to your Terminal Web App. Here's a guide to all available
+        commands and features.
+      </p>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          🧾 General Commands
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><code>help</code> – List all available commands</li>
+          <li>
+            <code>clear</code> or <code>cls</code> – Clear the terminal screen
+          </li>
+          <li><code>exit</code> – Exit or redirect from terminal page</li>
+          <li><code>whoami</code> – Show current user info if logged in</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          🔐 Authentication
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><code>login</code> – Start login process (Google or Email)</li>
+          <li><code>logout</code> – Log out current user</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          🧭 Web Launcher
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><code>map</code> – Opens Google Maps</li>
+          <li><code>insta</code> – Opens Instagram</li>
+          <li><code>movies</code> – Opens Movies Page</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          📁 File System
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li>
+            <code>upload</code> – Upload files to Firebase Storage (coming soon)
+          </li>
+          <li><code>download</code> – List and download uploaded files</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          💬 Messaging & Notes
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><code>note add [text]</code> – Add a personal note</li>
+          <li><code>note show</code> – Display saved notes</li>
+          <li>
+            <code>msg send [username] [message]</code> – Send message to user
+          </li>
+          <li><code>msg inbox</code> – Check your inbox</li>
+        </ul>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold border-b pb-1 mb-2">
+          🎨 Themes & Personalization
+        </h2>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><code>dark</code> – Switch to dark mode</li>
+          <li><code>light</code> – Switch to light mode</li>
+          <li>
+            <code>theme hacker</code>, <code>theme classic</code> – Set specific
+            themes (optional)
+          </li>
+        </ul>
+      </section>
+
+      <p class="mt-10 text-sm text-gray-500 dark:text-gray-400">
+        Last updated: June 2025 – Crafted with ❤️ by Mr. Ben
+      </p>
+    </main>
+    <script>
+      // Dark mode toggle
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark") ? "dark" : "light"
+        );
+      }
+
+      window.onload = () => {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      };
+    </script>
+  </body>
+</html>
